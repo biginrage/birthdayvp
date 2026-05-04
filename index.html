@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Happy 18th Vippy ❤️</title>
+<style>
+:root{--bg:#0c070d;--pink:#ff73b6;--soft:#ffd7ea;--glass:rgba(255,255,255,.1)}
+*{box-sizing:border-box} body{margin:0;font-family:Segoe UI,system-ui,sans-serif;background:radial-gradient(circle at top,#2a1230,#0c070d 65%);color:#fff;overflow-x:hidden}
+.screen{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:18px}
+.card{width:min(900px,95vw);background:var(--glass);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.center{text-align:center}.btn{border:0;background:linear-gradient(135deg,var(--pink),#ff3d95);color:#fff;padding:13px 22px;border-radius:999px;font-weight:700}
+.heart{display:inline-block;animation:hb 1.2s infinite}@keyframes hb{0%,100%{transform:scale(1)}30%{transform:scale(1.12)}60%{transform:scale(.97)}}
+#countdown{display:none}.timer{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.box{background:rgba(0,0,0,.28);padding:10px 12px;border-radius:12px;min-width:75px}
+#main,#final{display:none}.letter{white-space:pre-wrap;line-height:1.7;font-size:1rem;color:var(--soft);min-height:260px}
+#specialPic{width:100%;max-height:60vh;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.25);display:none;margin-bottom:14px;animation:fade 1s ease}
+@keyframes fade{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:scale(1)}}
+.controls{position:fixed;right:12px;bottom:12px;display:flex;gap:8px}.mini{background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.3);color:#fff;padding:9px 12px;border-radius:999px}
+canvas{position:fixed;inset:0;pointer-events:none}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<section class="screen" id="entry"><div class="card center">
+<h1>For Vipashyana <span class="heart">❤️</span></h1>
+<p>Something special is waiting for 12:00 AM...</p>
+<button class="btn" id="start">Tap to Begin ❤️</button>
+<div id="countdown"><p>Something special is about to begin…</p><div class="timer" id="timer"></div></div>
+</div></section>
+<section class="screen" id="main"><div class="card">
+<img id="specialPic" src="images/midnight-special.jpg" alt="Us"/>
+<h2 class="center">Hi Vipashyana ❤️</h2>
+<div class="letter" id="letter"></div>
+</div></section>
+<section class="screen" id="final"><div class="card center"><h2>Happy 18th Birthday Vippy ❤️</h2><p>This is just the beginning…</p></div></section>
+<div class="controls"><button class="mini" id="music">Music: Off</button><button class="mini" id="skip">Final</button></div>
+<audio id="bg" loop preload="auto"></audio>
+<script>
+const target=new Date('2026-05-05T00:00:00');
+const txt=`Hi Vipashyana ❤️\n\nHappy Happy Happy Birthday, meri jaan 🫶\n\nMeri bachchi, meri cutie, meri penguin 🐧… meri sabkuch ho tum.\nSach mein… sabkuch.\n\nJis din se tum meri hui… us din se main bhi tumhara ho gaya.\nAur phir dheere dheere nahi… har roz… aur zyada tumhara hota gaya.\nAur aage bhi hota rahunga… hamesha. ♾️\n\nTumse door rehke na… kuch samajh nahi aata.\nBas itna feel hota hai — we are meant for each other.\n\nMain kahin bhi jaata hoon…\nhar jagah tum yaad aati ho.\n\nHumein nahi pata ek saal baad hum kahan honge,\nagla birthday kahan celebrate karenge…\nbut ek cheez pata hai —\nhum saath honge.\n\nKisi bhi situation mein… kisi bhi jagah…\nmain tumhare saath rahunga.\n\nMain sirf tumhara hoon.\nHamesha. Hamesha. Hamesha. ❤️\n\nAur mujhe sirf tum chahiye apni life mein.\nTum mere liye bohot special ho… itna ki words bhi kam pad jaate hain.\n\nLog kya bolte hain… kya sochte hain…\nmujhe honestly farak nahi padta.\n\nMere paas tum ho — that’s all that matters.\n\nI love you… so so much baby ❤️\n\nTumhara birthday… sirf ek date nahi hai.\nAaj ke din meri life ki sabse important cheez paida hui thi —\nmeri lifeline.\n\nSach bolu…\ntum nahi hoti… toh shayad main bhi aisa nahi hota.\n\nMain hoon hi tumhare liye.\n\nAur ek baat yaad rakhna —\nkabhi bhi apne aap ko akela mat feel karna.\nKabhi bhi nahi.\n\nMain hamesha tumhare paas hoon,\ntumhare saath hoon,\ntumhare liye hoon.\nSirf tumhare liye. 💖\n\nSchool ke har din…\ntumhare saath jo time spend kiya hai na —\nwoh meri life ka best part hai.\n\nAur honestly…\nyeh jo 2 saal the…\n\nThey weren’t just beautiful… they were once in a lifetime. ✨\n\nItne alag… itne special…\nki main kabhi explain bhi nahi kar paunga.\n\nJab bhi kabhi sad hunga…\nya tumhe miss karunga…\nmain bas yeh sab yaad karunga…\naur automatically smile aa jayegi 😊\n\nAgar kabhi main tumpe gussa hua hoon…\nya tumhe hurt kiya ho…\n\nI’m really sorry ❤️\n\nMain try karunga ki kabhi bhi tumhe hurt na karu.\n\nBas itna jaan lo —\nI’m always there for you.\n\nI love you.\nMain tumhara hoon.\nForever. 💍\n\nHappy 18th meri penguin 🐧❤️\n\nAb tum officially adult ho gayi ho…\ntoh ready ho jao —\n\nab hum saath milke aur bade sapne dekhenge…\naur ek din…\nduniya jeet lenge. 🌍🔥\n\n✨ She turned eighteen, but to me,\nshe was always the moment my world changed.\n\n✨ 18 saal ki hui hai tu aaj,\npar meri zindagi mein toh tu tab hi aa gayi thi,\njab mujhe khud ka bhi pata nahi tha…\naur tab se leke aaj tak,\ntu hi meri sabse khoobsurat aadat hai. ❤️`;
+const start=document.getElementById('start'),countdown=document.getElementById('countdown'),timer=document.getElementById('timer');
+const entry=document.getElementById('entry'),main=document.getElementById('main'),letter=document.getElementById('letter'),pic=document.getElementById('specialPic');
+const bg=document.getElementById('bg'),music=document.getElementById('music');let on=false,int;
+start.onclick=async()=>{countdown.style.display='block';start.style.display='none';bg.src='music/romantic-instrumental.mp3';try{await bg.play();on=true;music.textContent='Music: On'}catch(e){};tick();int=setInterval(tick,1000)}
+function tick(){let d=target-new Date();if(d<=0){clearInterval(int);go();return;}let D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4),S=Math.floor(d%6e4/1000);timer.innerHTML=[[D,'Days'],[H,'Hours'],[M,'Mins'],[S,'Secs']].map(x=>`<div class='box'><b>${String(x[0]).padStart(2,'0')}</b><div>${x[1]}</div></div>`).join('')}
+function go(){entry.style.display='none';main.style.display='flex';pic.style.display='block';type();burst(240)}
+function type(){let i=0;let t=setInterval(()=>{letter.textContent+=txt[i++]||'';if(i>=txt.length){clearInterval(t);burst(320);setTimeout(()=>document.getElementById('final').style.display='flex',3500)}},18)}
+document.getElementById('skip').onclick=()=>document.getElementById('final').style.display='flex';music.onclick=async()=>{if(!bg.src)return;if(on){bg.pause();on=false;music.textContent='Music: Off'}else{try{await bg.play();on=true;music.textContent='Music: On'}catch(e){}}}
+const c=document.getElementById('fx'),x=c.getContext('2d');let p=[];function rs(){c.width=innerWidth;c.height=innerHeight}addEventListener('resize',rs);rs();function burst(n){for(let i=0;i<n;i++)p.push({x:Math.random()*c.width,y:-Math.random()*c.height,r:Math.random()*5+2,v:Math.random()*2+1,a:Math.random()*6.2,s:Math.random()*.1+.01,col:['#ffd3ea','#ff87c2','#ffe7b8'][Math.floor(Math.random()*3)]})}
+;(function an(){x.clearRect(0,0,c.width,c.height);p=p.filter(o=>o.y<c.height+20);for(const o of p){o.y+=o.v;o.x+=Math.sin(o.a+=o.s);x.fillStyle=o.col;x.fillRect(o.x,o.y,o.r,o.r*1.5)}requestAnimationFrame(an)})();
+</script>
+</body></html>
